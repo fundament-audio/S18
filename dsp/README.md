@@ -13,26 +13,64 @@ The driver is just a driver: any competent amp with adequate power and control w
 **3. Bring your own DSP** — ⏳
 Have a separate processor (miniDSP, CamillaDSP, …)? Apply our target curves / biquad coefficients on your own platform.
 
-## The three EQ presets
+## The three presets
 
-Three presets, switchable directly on the Hypex, trading low-frequency extension against maximum SPL:
+Three presets, switchable on the Hypex, trading low-frequency extension against maximum SPL. Each pairs a **Linkwitz-style PEQ boost at 20 Hz** (to extend the sealed roll-off) with a **Butterworth high-pass** that sets the excursion limit and protects the driver.
 
-- **P1 — Extended:** reaches the lowest, gives up max SPL. For smaller rooms or where room gain already fills the bottom.
-- **P2 — Balanced:** the all-rounder. Sensible extension with healthy headroom.
-- **P3 — Output:** loudest, rolls off earlier. For larger rooms or when you want SPL over the last octave.
+### S18 Deep — maximum extension
+Lowest reach, lowest max SPL. For smaller rooms, or when you want the bottom octave over loudness.
 
-| Preset | F3 (Hz) | F6 (Hz) | F10 (Hz) | Max SPL (sim) |
-|---|---|---|---|---|
-| **P1 — Extended** | ~20 | ~18 | ~16 | ~108 dB |
-| **P2 — Balanced** | ~30 | ~23 | ~20 | ~114 dB |
-| **P3 — Output** | ~37 | ~30 | ~26 | ~120 dB |
+| | |
+|---|---|
+| **High-pass** | 15 Hz · Butterworth · 24 dB/oct |
+| **PEQ** | 20 Hz · +15.0 dB · Q 1.6 |
+| **Simulated (ground plane)** | F3 20.4 Hz · F6 ~18 Hz · F10 16.1 Hz |
+| **Max SPL (sim)** | 106.4 dB |
+| **Ground plane (measured)** | ⏳ pending |
+| **In-room (measured)** | ⏳ pending |
 
-**Room note:** these are anechoic/electrical **targets**. In a real room you also get room gain, so the right preset depends on your room as much as taste. We'll follow up with measurements and iterate here — HFDs are luckily pure software presets :)
+### S18 — balanced (default)
+The all-rounder: sensible extension with healthy headroom.
+
+| | |
+|---|---|
+| **High-pass** | 20 Hz · Butterworth · 24 dB/oct |
+| **PEQ** | 20 Hz · +10.5 dB · Q 1.1 |
+| **Simulated (ground plane)** | F3 29.8 Hz · F6 ~25 Hz · F10 19.8 Hz |
+| **Max SPL (sim)** | 114.0 dB |
+| **Ground plane (measured)** | ⏳ pending |
+| **In-room (measured)** | ⏳ pending |
+
+### S18 Loud — maximum output
+Loudest, rolls off earliest. For larger rooms, or when you want SPL over the last octave.
+
+| | |
+|---|---|
+| **High-pass** | 30 Hz · Butterworth · 24 dB/oct |
+| **PEQ** | 20 Hz · +10.0 dB · Q 1.3 |
+| **Simulated (ground plane)** | F3 37.7 Hz · F6 ~32 Hz · F10 26.2 Hz |
+| **Max SPL (sim)** | 120.0 dB |
+| **Ground plane (measured)** | ⏳ pending |
+| **In-room (measured)** | ⏳ pending |
+
+### Summary
+
+| Preset | High-pass (BW, 24 dB/oct) | PEQ @ 20 Hz | F3 sim (Hz) | F6 sim (Hz)* | F10 sim (Hz) | Max SPL (sim) | F3 ground plane (meas.) | F3 in-room (meas.) |
+|---|---|---|---|---|---|---|---|---|
+| **S18 Deep** | 15 Hz | +15.0 dB, Q 1.6 | 20.4 | ~18 | 16.1 | 106.4 dB | | |
+| **S18** | 20 Hz | +10.5 dB, Q 1.1 | 29.8 | ~25 | 19.8 | 114.0 dB | | |
+| **S18 Loud** | 30 Hz | +10.0 dB, Q 1.3 | 37.7 | ~32 | 26.2 | 120.0 dB | | |
+
+\* F3 and F10 are read from the simulation; F6 is interpolated between them. Ground-plane and in-room columns are ⏳ pending measurement.
+
+### Ground plane vs in-room
+
+The figures above are **simulated ground-plane** (anechoic/electrical) targets. In a real room, **room gain** lifts the bottom octave further — typical usable **in-room extension is ~10 Hz (−3 dB)**. So the right preset depends on your room's gain as much as taste. HFDs are pure software presets, so we'll follow up with measurements and iterate here :)
 
 ## The files
 
 - HFD presets → [`/dsp/hypex`](hypex/)
-- Per-preset target curves + biquad allocation → ⏳ pending
+- The EQ settings above are the source of truth; per-preset target curves + full biquad allocation → ⏳ pending.
 - Crossover is **user-set upstream** in the processor/pre-amp; nothing is baked into the DSP.
 
 ## Protection — do not disable
