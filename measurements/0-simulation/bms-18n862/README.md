@@ -14,7 +14,7 @@ Initial sealed-box simulation of the BMS 18N862 in ~125 L sealed, including the 
 | S18 | 29.8 | ~25 | 19.8 | 114.0 dB |
 | S18 Loud | 37.7 | ~32 | 26.2 | 120.0 dB |
 
-Full EQ settings (high-pass + PEQ) per preset → [`/dsp`](../../dsp/).
+Full EQ settings (high-pass + PEQ) per preset → [`/dsp-amp/bms-18n862`](../../../dsp-amp/bms-18n862/).
 
 ## EQ per preset
 

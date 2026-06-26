@@ -6,6 +6,6 @@ Step-by-step, from cut to driver mounting to amp setup and loading the HFD:
 
 1. Cut panels (see [`/enclosure`](../enclosure/)).
 2. Assemble cabinet — bracing, damping stack, corner fillets.
-3. Mount the BMS 18N862 driver.
+3. Mount the BMS 18N862 driver (see [`/drivers/bms-18n862`](../drivers/bms-18n862/)).
 4. Install and wire the Hypex FA502.
-5. Load the HFD preset (see [`/dsp`](../dsp/)) and verify the limiter is active.
+5. Load the HFD preset (see [`/dsp-amp/bms-18n862/hypex`](../dsp-amp/bms-18n862/hypex/)) and verify the limiter is active.

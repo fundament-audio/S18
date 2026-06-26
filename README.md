@@ -6,9 +6,22 @@
 
 A fully documented, measurable, repairable sealed 18″ built around a known-good recipe — made open. Deep, tactile bass with the cone control and low distortion to be taken seriously, not just a home-theatre rumble box.
 
-## Scope (read this first)
+**Who it's for:** people who want a reference-grade music subwoofer they can build, measure, and repair themselves — ideally as a stereo pair. For the full scope and design target, see the driver hub → [`/drivers/bms-18n862`](drivers/bms-18n862/).
 
-The S18 is a **music subwoofer**, designed to ideally work in pairs — crossed **as high as possible (≤ ~80–120 Hz)**. It is intentionally *not* a high-crossover, directivity-controlled module — a single 18″ beams too early to integrate cleanly above that.
+## Built on the FUNDAMENT platform
+
+The S18 is one *build* on a shared platform. The platform defines the philosophy, decision model, measurement protocol, and documentation standard once; each build extends them rather than redefining them. The structuring idea:
+
+> The **enclosure is the durable foundation** (decades-long lifespan). Everything bolted to it — **driver, amplifier, DSP, and measurements** — is modular: replaceable, upgradeable, and documented per configuration.
+
+That's why this repo nests per driver, and per amp/DSP within that: one cabinet can host different drivers, each with its own design target, DSP settings, and measurements.
+
+Platform docs (read these for the "why"):
+[PHILOSOPHY](https://github.com/fundament-audio/platform/blob/main/PHILOSOPHY.md) ·
+[DECISION_MODEL](https://github.com/fundament-audio/platform/blob/main/DECISION_MODEL.md) ·
+[MEASUREMENT_PROTOCOL](https://github.com/fundament-audio/platform/blob/main/MEASUREMENT_PROTOCOL.md) ·
+[DOCUMENTATION_STANDARD](https://github.com/fundament-audio/platform/blob/main/DOCUMENTATION_STANDARD.md) ·
+[AGENTS](https://github.com/fundament-audio/platform/blob/main/AGENTS.md)
 
 ## What we deliver
 
@@ -18,42 +31,41 @@ The S18 is a **music subwoofer**, designed to ideally work in pairs — crossed 
 - Published raw measurements, to a shared protocol
 - Reproducible stereo pairs
 
-## Target specs
+## Official reference build (current configuration)
 
-| | |
-|---|---|
-| **Frequency response** | 20–250 Hz ±3 dB (ground plane), preset-dependent |
-| **Typical in-room extension** | ~10 Hz (−3 dB) |
-| **Max SPL** (avg 30–80 Hz, 1 m) | ~120 dB |
-| **Dimensions (W×H×D)** | 550 × 550 × 600 mm |
+The reference build is the combination we measure, validate, and document. Each row is modular — follow the link to that component.
 
-## The recipe at a glance
-
-| | |
-|---|---|
-| **Driver** | BMS 18N862 |
-| **Amp / DSP** | Hypex FusionAmp FA502 (easy entrance — or bring your own amp / DSP, see [`/dsp`](dsp/)) |
-| **Enclosure** | Sealed, ~115–125 L net |
-| **Alignment** | Fc ≈ 47 Hz, **Qtc ≈ 0.64** |
-| **Crossover** | User-set in processor/pre-amp; ships full-range to natural roll-off |
+| | | |
+|---|---|---|
+| **Driver** | BMS 18N862 | [`/drivers/bms-18n862`](drivers/bms-18n862/) |
+| **Amp / DSP** | Hypex FusionAmp FA502 (easy entrance — or bring your own) | [`/dsp-amp`](dsp-amp/) |
+| **Enclosure** | Sealed, ~115–125 L net | [`/enclosure`](enclosure/) |
+| **Alignment** | Fc ≈ 47 Hz, **Qtc ≈ 0.64** | [driver](drivers/bms-18n862/) · [enclosure](enclosure/) |
+| **Crossover** | User-set in processor/pre-amp; ships full-range to natural roll-off | [`/dsp-amp`](dsp-amp/) |
 
 ## Repo structure
 
 ```
 s18/
-├── enclosure/      # plans, cut lists, bracing, damping
-├── dsp/            # amp + DSP paths, EQ presets, Hypex HFD files
+├── enclosure/      # the durable foundation — sealed cabinet, cut list, bracing, DXF
+├── drivers/        # modular: each driver, its design target + T/S params
+│   └── bms-18n862/
+├── dsp-amp/        # modular: DSP settings per driver, ready-to-load files per amp/DSP
+│   └── bms-18n862/
+│       └── hypex/
+├── measurements/   # raw data, nested per stage → driver → amp
+│   └── 0-simulation/bms-18n862/
 ├── bom/            # bill of materials + EU suppliers
-├── measurements/   # raw data + plots
 ├── docs/           # build guide, design notes
 └── README.md
 ```
 
-- **[`/dsp`](dsp/)** — amplification + DSP paths (Hypex FA502, or bring your own amp / DSP) and the three EQ presets.
-- **[`/enclosure`](enclosure/)** — sealed cabinet design and CAD.
+- **[`/drivers/bms-18n862`](drivers/bms-18n862/)** — the driver hub: design target, target specs, T/S, alignment in this enclosure.
+- **[`/dsp-amp`](dsp-amp/)** — amplification + DSP paths (Hypex FA502, or bring your own) and the per-driver EQ presets.
+- **[`/enclosure`](enclosure/)** — sealed cabinet design, cut list, and CAD.
 - **[`/measurements`](measurements/)** — simulated + (pending) measured performance.
+- **[`/bom`](bom/)** — bill of materials + EU suppliers (⏳ pending). All parts off-the-shelf; no custom tooling.
 - **[`/docs/BUILD.md`](docs/BUILD.md)** — step-by-step build guide.
-- **`/bom`** — bill of materials + EU suppliers (⏳ pending). All parts off-the-shelf; no custom tooling.
 
 ## Reproducibility
 
