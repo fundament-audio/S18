@@ -1,10 +1,10 @@
 # FUNDAMENT S18
 
-**Deep 18″ bass without black boxes. Open, measurable, repairable — built to stay alive.** 
+**Deep 18″ bass without black boxes. Open, measurable, repairable — built to stay alive.**
 
 > Status: 🟡 **Design + simulation initiated** — headline numbers below are simulated; measurements pending.
 
-Open-source sealed 18″ reference subwoofer. Build 001 of the [FUNDAMENT](https://github.com/fundament-audio) platform.
+Open-source sealed 18″ reference subwoofer. Build 001 of the [FUNDAMENT](https://github.com/fundament-audio/platform) platform.
 
 💬 Main discussion lives on the [Audio Science Review thread](https://www.audiosciencereview.com/forum/index.php?threads/fundament-an-open-source-fully-documented-subwoofer-platform-build-001-sealed-18%E2%80%B3-bms-18n862-fa502.72012/) — come say hi.
 
@@ -75,7 +75,7 @@ Start here:
 
 ## Built on FUNDAMENT
 
-This repo is one implementation; the platform defines how it thinks: [PHILOSOPHY](https://github.com/fundament-audio/.github/blob/main/profile/PHILOSOPHY.md) · [DECISION_MODEL](https://github.com/fundament-audio/.github/blob/main/profile/DECISION_MODEL.md) · [MEASUREMENT_PROTOCOL](https://github.com/fundament-audio/.github/blob/main/profile/MEASUREMENT_PROTOCOL.md) · [DOCUMENTATION_STANDARD](https://github.com/fundament-audio/.github/blob/main/profile/DOCUMENTATION_STANDARD.md).
+This repo is one implementation; the platform defines how it thinks: [PHILOSOPHY](https://github.com/fundament-audio/platform/blob/main/PHILOSOPHY.md) · [DECISION_MODEL](https://github.com/fundament-audio/platform/blob/main/DECISION_MODEL.md) · [MEASUREMENT_PROTOCOL](https://github.com/fundament-audio/platform/blob/main/MEASUREMENT_PROTOCOL.md) · [DOCUMENTATION_STANDARD](https://github.com/fundament-audio/platform/blob/main/DOCUMENTATION_STANDARD.md).
 
 ## Contributing
 
