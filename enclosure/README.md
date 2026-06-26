@@ -24,7 +24,7 @@ All panels 22 mm MDF. Dimensions in mm.
 | Side | 2 | 536×550 | None |
 | Top | 1 | 506×536 | None |
 | Bottom | 1 | 506×536 | None |
-| Window brace | 3 | 506×536 | None — solid for now, lightening cutouts ⏳ TBD |
+| Window brace | 2 | 506×536 | As seen in DXF |
 
 ## Damping
 
