@@ -44,6 +44,8 @@ Prior art tells us roughly where it lands. Measurements will follow and try to p
 
 Off-the-shelf parts only. No custom tooling.
 
+The Hypex is the validated reference. Alternative amps (Crown XLS, DIY Purifi/nCore, Audiophonics) and DSPs (miniDSP, Raspberry Pi + CamillaDSP, a ~€30 Pico 2 + Arylic, Behringer DCX2496) are documented in [`/dsp-amp`](dsp-amp/).
+
 ## Built to stay alive
 
 Nothing here is a sealed black box. Driver, amp, DSP, enclosure, tuning and measurements are all documented, versioned and replaceable. Driver dies — replace it. Amp dies — swap it. Want a different target? Validate it, publish the data: same platform, different validated outcome.
