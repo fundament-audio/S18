@@ -26,6 +26,11 @@ All panels 22 mm MDF. Dimensions in mm.
 | Bottom | 1 | 506×536 | None |
 | Window brace | 3 | 506×536 | None — solid for now, lightening cutouts ⏳ TBD |
 
+## Damping
+
+- **Panels:** bitumen pads on the side walls to kill panel ring.
+- **Fill:** Visaton VS-Wool acoustic wool. Fill the cabinet evenly — **not too tight, but still present** throughout. Light, even fill tames internal standing waves without over-stuffing (which would skew the sealed alignment).
+
 ## Plans
 
-⏳ pending — bracing diagram, damping stack and DXF files. DXF → [`/enclosure/dxf`](dxf/).
+**Cut files (DXF):** first CNC iteration, including the window braces → [`dxf/fundament-s18-with-braces.dxf`](dxf/fundament-s18-with-braces.dxf). All other files live in [`/enclosure/dxf`](dxf/).
