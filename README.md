@@ -6,7 +6,7 @@
 
 A fully documented, measurable, repairable sealed 18″ built around a known-good recipe — made open. Deep, tactile bass with the cone control and low distortion to be taken seriously, not just a home-theatre rumble box.
 
-**Who it's for:** people who want a reference-grade music subwoofer they can build, measure, and repair themselves — ideally as a stereo pair. For the full scope and design target, see the driver hub → [`/drivers/bms-18n862`](drivers/bms-18n862/).
+**Who it's for:** people who want a reference-grade music subwoofer they can build, measure, and repair themselves — ideally as a stereo pair. For the full scope and design target, see the driver hub → [`/drivers`](drivers/).
 
 ## Built on the FUNDAMENT platform
 
@@ -40,7 +40,7 @@ The reference build is the combination we measure, validate, and document. Each 
 | **Driver** | BMS 18N862 | [`/drivers/bms-18n862`](drivers/bms-18n862/) |
 | **Amp / DSP** | Hypex FusionAmp FA502 (easy entrance — or bring your own) | [`/dsp-amp`](dsp-amp/) |
 | **Enclosure** | Sealed, ~115–125 L net | [`/enclosure`](enclosure/) |
-| **Alignment** | Fc ≈ 47 Hz, **Qtc ≈ 0.64** | [driver](drivers/bms-18n862/) · [enclosure](enclosure/) |
+| **Alignment** | Fc ≈ 47 Hz, **Qtc ≈ 0.64** | |
 | **Crossover** | User-set in processor/pre-amp; ships full-range to natural roll-off | [`/dsp-amp`](dsp-amp/) |
 
 ## Repo structure
@@ -49,18 +49,19 @@ The reference build is the combination we measure, validate, and document. Each 
 s18/
 ├── enclosure/      # the durable foundation — sealed cabinet, cut list, bracing, DXF
 ├── drivers/        # modular: each driver, its design target + T/S params
-│   └── bms-18n862/
+│   └── <DRIVER>
 ├── dsp-amp/        # modular: DSP settings per driver, ready-to-load files per amp/DSP
-│   └── bms-18n862/
-│       └── hypex/
+│   └── <DRIVER>/
+│       └── <AMP/DSP>/
 ├── measurements/   # raw data, nested per stage → driver → amp
-│   └── 0-simulation/bms-18n862/
+│   └── 0-simulation/
+    │   └── <DRIVER>/
 ├── bom/            # bill of materials + EU suppliers
 ├── docs/           # build guide, design notes
 └── README.md
 ```
 
-- **[`/drivers/bms-18n862`](drivers/bms-18n862/)** — the driver hub: design target, target specs, T/S, alignment in this enclosure.
+- **[`/drivers`](drivers/)** — the driver hub: design target, target specs, T/S, alignment in this enclosure.
 - **[`/dsp-amp`](dsp-amp/)** — amplification + DSP paths (Hypex FA502, or bring your own) and the per-driver EQ presets.
 - **[`/enclosure`](enclosure/)** — sealed cabinet design, cut list, and CAD.
 - **[`/measurements`](measurements/)** — simulated + (pending) measured performance.
