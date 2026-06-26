@@ -78,7 +78,6 @@ Stereo pair — the amp choice is where you save or buy headroom:
 |---|---|---|---|
 | 1× FA502 (one channel per sub) | ~€700 | ~€2,180 | cheapest Hypex; one amp drives both |
 | 2× FA501 | ~€1,010 | ~€2,490 | one amp per sub |
-| 2× FA502 | ~€1,400 | ~€2,880 | one per sub |
 | 2× FA502 bridged | ~€1,400 | ~€2,880 | ~1000 W/sub — max headroom |
 
 ### Budget build — no FA502
