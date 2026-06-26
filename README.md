@@ -2,7 +2,7 @@
 
 **Deep 18″ bass without black boxes. Open, measurable, repairable — built to stay alive.**
 
-> Status: 🟡 **Design + simulation initiated** — headline numbers below are simulated; measurements pending.
+> Status: 🟡 **Design + initial prototypes** — well proven DIY built.
 
 Open-source sealed 18″ reference subwoofer. Build 001 of the [FUNDAMENT](https://github.com/fundament-audio/platform) platform.
 
@@ -10,13 +10,13 @@ Open-source sealed 18″ reference subwoofer. Build 001 of the [FUNDAMENT](https
 
 ## Scope
 
-The S18 is a **music subwoofer**, best in pairs, crossed **as high as possible (≤ ~80–120 Hz)**. It is intentionally *not* a high-crossover, directivity-controlled module — a single 18″ beams too early to integrate cleanly above that.
+The S18 is a **music subwoofer**, best in pairs, crossed **as high as possible (≤ ~80–150/180 Hz)**. It is intentionally *not* a high-crossover mid woofer, directivity-controlled module — a single 18″ beams too early to integrate cleanly above that.
 
 Deep, tactile bass with the cone control and low distortion to be taken seriously — not a home-theatre rumble box.
 
 ## Proven parts, missing data
 
-The engineering here isn't novel - that's the point. The BMS 18N862 in a sealed ~120 L box is one of the most-trodden paths in serious DIY: documented across a scatter of forum builds, and a driver respected enough that designers like Troels Gravesen run it in their flagship full-range systems. The materials are known-good. By every account that exists, this driver is fast, low-distortion and properly excellent.
+The engineering here isn't novel - that's the point. The BMS 18N862 in a sealed ~120 L box is one of the most-trodden paths in serious DIY: documented across a scatter of forum builds, people raving about it, and a driver respected enough that designers like Troels Gravesen run it in their flagship full-range systems. The materials are known-good. By every account that exists, this driver is fast, low-distortion and properly excellent.
 
 What's never existed is that knowledge in **one place, built to one spec, and measured to a published protocol** — instead of six forum posts and a dead image host.
 
@@ -27,9 +27,12 @@ Prior art tells us roughly where it lands. Measurements will follow and try to p
 | | |
 |---|---|
 | **Frequency response** | 20–250 Hz ±3 dB (ground plane, simulated), preset-dependent |
-| **Typical in-room extension** | ~10 Hz (−3 dB, simulated) |
+| **Typical in-room extension** | ~10 Hz (−6 dB, user reported & simulated) |
 | **Max SPL** (avg 30–80 Hz, 1 m) | ~120 dB (simulated) |
+| **Proprietary parts** | 0 | the last sub you'll ever need to fully buy! |
 | **Dimensions (W×H×D)** | 550 × 550 × 600 mm |
+| **Lifetime cost** | a fraction | of any commercial sub if anything fails — swap the part, not the system | 
+
 
 ## The recipe
 
