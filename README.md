@@ -1,69 +1,87 @@
 # FUNDAMENT S18
 
-**Open-source sealed 18″ reference subwoofer.** Build 001 of the [FUNDAMENT](https://github.com/fundament-audio) platform.
+**Deep 18″ bass without black boxes. Open, measurable, repairable — built to stay alive.**
 
-> Status: 🟡 **Design + simulation initiated**
+> Status: 🟡 **Design + simulation initiated** — headline numbers below are simulated; measurements pending.
 
-A fully documented, measurable, repairable sealed 18″ built around a known-good recipe — made open. Deep, tactile bass with the cone control and low distortion to be taken seriously, not just a home-theatre rumble box.
+Open-source sealed 18″ reference subwoofer. Build 001 of the [FUNDAMENT](https://github.com/fundament-audio/platform) platform.
+
+💬 Main discussion lives on the [Audio Science Review thread](https://www.audiosciencereview.com/forum/index.php?threads/fundament-an-open-source-fully-documented-subwoofer-platform-build-001-sealed-18%E2%80%B3-bms-18n862-fa502.72012/) — come say hi.
 
 ## Scope (read this first)
 
-The S18 is a **music subwoofer**, designed to ideally work in pairs — crossed **as high as possible (≤ ~80–120 Hz)**. It is intentionally *not* a high-crossover, directivity-controlled module — a single 18″ beams too early to integrate cleanly above that.
+The S18 is a **music subwoofer**, best in pairs, crossed **as high as possible (≤ ~80–120 Hz)**. It is intentionally *not* a high-crossover, directivity-controlled module — a single 18″ beams too early to integrate cleanly above that.
 
-## What we deliver
-
-- A documented, measurable, repairable open sealed-18 recipe
-- Off-the-shelf parts only — no custom tooling
-- Switchable EQ presets, extension vs. SPL
-- Published raw measurements, to a shared protocol
-- Reproducible stereo pairs
+Deep, tactile bass with the cone control and low distortion to be taken seriously — not a home-theatre rumble box.
 
 ## Target specs
 
 | | |
 |---|---|
-| **Frequency response** | 20–250 Hz ±3 dB (ground plane), preset-dependent |
-| **Typical in-room extension** | ~10 Hz (−3 dB) |
-| **Max SPL** (avg 30–80 Hz, 1 m) | ~120 dB |
+| **Frequency response** | 20–250 Hz ±3 dB (ground plane, simulated), preset-dependent |
+| **Typical in-room extension** | ~10 Hz (−3 dB, simulated) |
+| **Max SPL** (avg 30–80 Hz, 1 m) | ~120 dB (simulated) |
 | **Dimensions (W×H×D)** | 550 × 550 × 600 mm |
 
-## The recipe at a glance
+## The recipe
 
-| | |
+| Part | Reference |
 |---|---|
 | **Driver** | BMS 18N862 |
-| **Amp / DSP** | Hypex FusionAmp FA502 (easy entrance — or bring your own amp / DSP, see [`/dsp`](dsp/)) |
+| **Amp / DSP** | Hypex FusionAmp FA502 — or bring your own, see [`/dsp-amp`](dsp-amp/) |
 | **Enclosure** | Sealed, ~115–125 L net |
 | **Alignment** | Fc ≈ 47 Hz, **Qtc ≈ 0.64** |
 | **Crossover** | User-set in processor/pre-amp; ships full-range to natural roll-off |
+| **EQ** | Switchable presets — extension vs. SPL |
 
-## Repo structure
+Off-the-shelf parts only. No custom tooling.
 
-```
-s18/
-├── enclosure/      # plans, cut lists, bracing, damping
-├── dsp/            # amp + DSP paths, EQ presets, Hypex HFD files
-├── bom/            # bill of materials + EU suppliers
-├── measurements/   # raw data + plots
-├── docs/           # build guide, design notes
+## Built to stay alive
+
+Nothing here is a sealed black box. Driver, amp, DSP, enclosure, tuning and measurements are all documented, versioned and replaceable. Driver dies — replace it. Amp dies — swap it. Want a different target? Validate it, publish the data: same platform, different validated outcome.
+
+## How to get one
+
+| Path | What it means |
+|---|---|
+| **DIY** | Download files, source parts, build it all |
+| **Part-DIY** | Plans + flatpack or local CNC, assemble yourself |
+| **Local build** | Cabinets or parts made locally from the open files |
+| **Built-to-order** | Future: hand-built systems from the same open design |
+
+Built-to-order is convenience, not a paywall. The engineering stays open.
+
+## Repository map
+
+```text
+S18/
+├── drivers/        # driver choices, targets and use cases
+├── dsp-amp/        # DSP + amplifier paths, presets and protection
+├── enclosure/      # cabinet design, cut list, bracing and DXF
+├── measurements/   # simulations, ground-plane data and future measurements
+├── bom/            # bill of materials and suppliers
+├── docs/           # build guide and design notes
 └── README.md
 ```
 
-- **[`/dsp`](dsp/)** — amplification + DSP paths (Hypex FA502, or bring your own amp / DSP) and the three EQ presets.
-- **[`/enclosure`](enclosure/)** — sealed cabinet design and CAD.
-- **[`/measurements`](measurements/)** — simulated + (pending) measured performance.
-- **[`/docs/BUILD.md`](docs/BUILD.md)** — step-by-step build guide.
-- **`/bom`** — bill of materials + EU suppliers (⏳ pending). All parts off-the-shelf; no custom tooling.
+Start here:
 
-## Reproducibility
+* [drivers/](drivers/) — choose the driver path
+* [dsp-amp/](dsp-amp/) — choose DSP / amplifier implementation
+* [enclosure/](enclosure/) — build the cabinet
+* [measurements/](measurements/) — check simulation and measured data
+* [bom/](bom/) — source parts
+* [docs/BUILD.md](docs/BUILD.md) — build guide
 
-- **Stereo pairs:** match drivers (and net volume) within [TODO: tolerance] so the two units track through the LT region — otherwise the bass image smears.
+## Built on FUNDAMENT
+
+This repo is one implementation; the platform defines how it thinks: [PHILOSOPHY](https://github.com/fundament-audio/platform/blob/main/PHILOSOPHY.md) · [DECISION_MODEL](https://github.com/fundament-audio/platform/blob/main/DECISION_MODEL.md) · [MEASUREMENT_PROTOCOL](https://github.com/fundament-audio/platform/blob/main/MEASUREMENT_PROTOCOL.md) · [DOCUMENTATION_STANDARD](https://github.com/fundament-audio/platform/blob/main/DOCUMENTATION_STANDARD.md).
 
 ## Contributing
 
-Build it, measure it to the protocol, share the data. Issues, PRs, and especially independent measurements very welcome — see [`CONTRIBUTING.md`](CONTRIBUTING.md). Roadmap and revisions are tracked through GitHub issues + PRs.
+Build it, measure it to the protocol, share the data. Independent measurements especially welcome — see [`CONTRIBUTING.md`](CONTRIBUTING.md). Roadmap and revisions tracked through GitHub issues + PRs.
 
-💬 **Community:** the main discussion lives on the [Audio Science Review thread](https://www.audiosciencereview.com/forum/index.php?threads/fundament-an-open-source-fully-documented-subwoofer-platform-build-001-sealed-18″-bms-18n862-fa502.72012/) — come say hi.
+💬 Main discussion lives on the [Audio Science Review thread](https://www.audiosciencereview.com/forum/index.php?threads/fundament-an-open-source-fully-documented-subwoofer-platform-build-001-sealed-18%E2%80%B3-bms-18n862-fa502.72012/) — come say hi.
 
 ## Licence
 

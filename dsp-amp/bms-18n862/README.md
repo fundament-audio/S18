@@ -1,21 +1,12 @@
-# S18 — DSP & amplification
+# S18 — DSP settings: BMS 18N862
 
-The S18 ships **full-range** to its natural roll-off. You choose how to power and shape it.
+DSP settings for the **BMS 18N862** in the S18 sealed enclosure. These are the **source of truth** — amp-agnostic target curves. For ready-to-load files on a specific amp, see [`hypex/`](hypex/) (or apply the biquads on your own DSP).
 
-## Paths
-
-**1. Hypex FusionAmp FA502 — the easy entrance** (recommended for now)
-Amp + DSP in one box. Load our HFD presets and you're done — see the files below.
-
-**2. Bring your own amp** — ⏳
-The driver is just a driver: any competent amp with adequate power and control works. Pair it with a DSP path.
-
-**3. Bring your own DSP** — ⏳
-Have a separate processor (miniDSP, CamillaDSP, …)? Apply our target curves / biquad coefficients on your own platform.
+For the driver's design target and specs, see the driver hub → [`../../drivers/bms-18n862`](../../drivers/bms-18n862/).
 
 ## The three presets
 
-Three presets, switchable on the Hypex, trading low-frequency extension against maximum SPL. Each pairs a **Linkwitz-style PEQ boost at 20 Hz** (to extend the sealed roll-off) with a **Butterworth high-pass** that sets the excursion limit and protects the driver.
+Three presets, trading low-frequency extension against maximum SPL. Each pairs a **Linkwitz-style PEQ boost at 20 Hz** (to extend the sealed roll-off) with a **Butterworth high-pass** that sets the excursion limit and protects the driver.
 
 ### S18 Deep — maximum extension
 Lowest reach, lowest max SPL. For smaller rooms, or when you want the bottom octave over loudness.
@@ -69,10 +60,16 @@ The figures above are **simulated ground-plane** (anechoic/electrical) targets. 
 
 ## The files
 
-- HFD presets → [`/dsp/hypex`](hypex/)
+- **Hypex FA502 HFD presets** → [`hypex/`](hypex/)
 - The EQ settings above are the source of truth; per-preset target curves + full biquad allocation → ⏳ pending.
+- **Bring your own DSP:** apply the high-pass + PEQ above on your platform.
 - Crossover is **user-set upstream** in the processor/pre-amp; nothing is baked into the DSP.
 
 ## Protection — do not disable
 
-The onboard limiter is the safety-critical part of this design. Because room EQ runs *upstream*, the amp must survive whatever you feed it — a single null-fill boost can otherwise bottom the driver.
+The onboard limiter is the safety-critical part of this design. Because room EQ runs *upstream*, the amp must survive whatever you feed it — a single null-fill boost can otherwise bottom the driver. (See the [DSP & amplification overview](../).)
+
+## Where to go next
+
+- **Driver hub** (target + specs) → [`../../drivers/bms-18n862`](../../drivers/bms-18n862/)
+- **Simulation** these presets are derived from → [`../../measurements/0-simulation/bms-18n862`](../../measurements/0-simulation/bms-18n862/)
