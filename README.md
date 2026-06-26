@@ -61,6 +61,8 @@ Nothing here is a sealed black box. Driver, amp, DSP, enclosure, tuning and meas
 
 Built-to-order is convenience, not a paywall. The engineering stays open.
 
+Rough cost per build (and per stereo pair) → [`/bom`](bom/).
+
 ## Repository map
 
 ```text
